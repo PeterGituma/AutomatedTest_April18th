@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Page</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button type="submit" id="login">Login</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'validUser' && password === 'validPass') {
+        message.textContent = 'Welcome!';
+        message.id = 'welcome';
+      } else {
+        message.textContent = 'Invalid credentials';
+        message.id = 'error';
+      }
+
+      console.dir(form, {depth: null});
+    });
+  </script>
+</body>
+</html>
