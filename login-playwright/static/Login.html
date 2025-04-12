@@ -16,11 +16,26 @@
   <script>
     const form = document.getElementById('loginForm');
     const message = document.getElementById('message');
+    const usernameField = document.getElementById('username');
+    const passwordField = document.getElementById('password');
+
+    // Prevent space bar from being typed in username and password fields
+    usernameField.addEventListener('keydown', function(e) {
+      if (e.key === ' ') {
+        e.preventDefault();
+      }
+    });
+
+    passwordField.addEventListener('keydown', function(e) {
+      if (e.key === ' ') {
+        e.preventDefault();
+      }
+    });
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = usernameField.value;
+      const password = passwordField.value;
 
       if (username === 'validUser' && password === 'validPass') {
         message.textContent = 'Welcome!';

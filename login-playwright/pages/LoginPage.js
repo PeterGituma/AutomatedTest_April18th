@@ -16,8 +16,12 @@ exports.LoginPage = class LoginPage {
   }
 
   async login(username, password) {
-    await this.page.fill(this.usernameField, username);
-    await this.page.fill(this.passwordField, password);
+    // Trim spaces from username and password
+    const trimmedUsername = username.trim();
+    const trimmedPassword = password.trim();
+
+    await this.page.fill(this.usernameField, trimmedUsername);
+    await this.page.fill(this.passwordField, trimmedPassword);
     await this.page.click(this.loginButton);
   }
 

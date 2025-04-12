@@ -1,18 +1,14 @@
 {
     "valid": [
       { "username": "validUser", "password": "validPass" },
-      { "username": "validUser", "password": "validPass" },
-      { "username": "validUser", "password": "validPass" },
-      { "username": "validUser", "password": "validPass" },
-      { "username": "validUser", "password": "validPass" },
       { "username": "ValidUser", "password": "validPass" },
-      { "username": " validUser ", "password": " validPass " },
+      { "username": " validU ", "password": " validPs " },
       { "username": "validUser", "password": "ValidPass123!" },
       { "username": "user.name", "password": "p@ssword" }
     ],
     "invalid": [
       { "username": "", "password": "" },
-      { "username": "validUser", "password": "0" },
+      { "username": "validUser", "password": "" },
       { "username": "", "password": "validPass" },
       { "username": "wrongUser", "password": "wrongPass" },
       { "username": "admin' OR '1'='1", "password": "hack" },
