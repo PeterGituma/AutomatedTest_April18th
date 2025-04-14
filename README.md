@@ -17,9 +17,7 @@ It includes **positive** and **negative** test cases to validate user authentica
 ### ❌ Invalid Login Tests
 - Blank inputs
 - Invalid usernames or passwords
-- SQL injection & XSS attempts
 - Short or excessively long credentials
-- Whitespace-only input
 
 ---
 
@@ -62,8 +60,25 @@ npx serve static
 📜 JavaScript (ES6+)
 👤 Author
 
-## 👤 Author
+### 👤 Author
 
 **Peter Gituma**  
 📧 [peter.l.gituma@gmail.com](mailto:peter.l.gituma@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/peterlgituma/)
+
+## 🧠 Design Choices & Future Improvements
+
+### Design Choices
+- Page Object Model (POM): I used the Page Object Model pattern to keep the test logic clean and maintainable. This allows easier updates if the UI changes.
+- Data-Driven Testing: All test credentials are stored in a separate JSON file to allow easy scaling and separation of test logic from test data.
+- Playwright Testing Framework: Chosen for its speed, reliability, and built-in parallel test execution, along with strong support for modern web apps.
+- Clear Assertion Strategy: Used targeted assertions (isVisible() checks) to verify login success or error states, reducing false positives.
+  
+
+### If I Had More Time
+- Secure Credentials Management: Move sensitive data (like real usernames/passwords) to environment variables or encrypted secrets.
+- Enhanced Validation: Add tests for edge cases like SQL injection, script injection, and invalid character handling.
+- More Robust Assertions: Expand assertions to validate not only visibility but also text content and page redirects.
+- CI Integration: Set up GitHub Actions to automatically run tests on pull requests and merges.
+- UI improvements made the page more vibrant and user-friendly, implemented something like tailwind to the web application.
+- I would have also implemented React for a more dynamic login UI It would have allowed me to use a Component-based structure and state management and even improved the testing scope. 
